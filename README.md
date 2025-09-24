@@ -199,3 +199,30 @@ EDA 과정에서 결측값 처리, 이상값 수정, 변수 변환 및 파생 �
     사용한 분석 기법 또는 모델을 선택한 이유와 그 과정에서 고려한 대안들을 서술하고, 선택한 모델이 문제 해결에 어떻게 기여했는지 논리적으로 설명한다. 다양한 모델 중에서 선택한 이유와 해당 모델의 강점, 잠재적 한계점 등을 명확히 기술하며, 다른 방법들과의 비교를 통해 선택의 정당성을 입증한다.
 5. **결과 해석**
     분석 결과의 실질적 유용성을 바탕으로 최종 결론을 도출하고 분석 내용을 종합적으로 요약하며, 추가적인 제언 등을 기술한다.
+
+# 실기 시험 환경 구성하기
+
+- 참고 : <https://well-being-stat.tistory.com/2>
+
+1. conda 가상 환경을 아래와 같이 생성
+```bash
+conda create -n ADP-study python=3.7
+```
+2. `ADP-study` 환경 실행
+```bash
+conda activate ADP-study
+```
+3. 주피터 노트북을 `conda` 명령어로 설치
+```bash
+conda install jupyter
+```
+4. 충돌 방지를 위해, 필수 패키지를 우선 아래와 같이 설치
+```bash
+pip install -r requirement.txt
+```
+5. 시험장과 동일한 환경 구성
+```bash
+for /F "tokens=*" %i in (requirements.txt) do @pip show %i.split("==")[0] 2>NUL || pip install --no-deps %i
+```
+6. `jupyter notebook` 통해서 주피터 노트북 실행 가능
+    - 시스템 검색에 jupyuter notebook 검색 시, 나오는 걸로 실행 가능하다고 함 (내 경우는 안 됨)
