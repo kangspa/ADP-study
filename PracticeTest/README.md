@@ -16,11 +16,20 @@
 
 - 곽기영 교수님 통계 강의 확인 : <https://youtube.com/playlist?list=PLY0OaF78qqGAxKX91WuRigHpwBU0C2SB_&si=Kag_O-KOsjV1BJUg>
 
+# 시험문제 복원 출처 관련
+
+- 마크다운으로 작성해둔 모든 복원 기출 문제는 웹서핑 통해서 볼 수 있는, 오픈되어 있는 블로그 글들에서 가져왔습니다.
+- 각 문제지 최상단에 출처를 작성해뒀는데, 원본 글로 이동할 경우 블로거가 제작해둔 데이터를 볼 수도 있습니다.
+
+- 가장 많이 참고한 출처
+    - 출처 : <https://www.datamanim.com/dataset/ADPpb/index.html>
+    - 출처 : <https://statisticsplaybook.com/adp-past-exam-questions/>
+
 # 시험 준비를 위한 Topic-List
 
 - 참고
     - <https://well-being-stat.tistory.com/4>
-    - <https://coding-law.tistory.com/entry/%EB%B2%88%EC%99%B84-KT-AIVLE-3%EA%B8%B0-ai%ED%8A%B8%EB%9E%99-28%ED%9A%8C-ADP-%EC%8B%A4%EA%B8%B0-%ED%95%A9%EA%B2%A9>
+    - <https://coding-law.tistory.com/entry/번외4-KT-AIVLE-3기-ai트랙-28회-ADP-실기-합격>
 
 ## KOCW 비모수통계학
 
@@ -90,9 +99,13 @@
 
 - 참고 : <https://well-being-stat.tistory.com/4>
 
-- `gemini-cli` 를 활용하여 진행했습니다.
-- 프로젝트 프롬프트는 `prompt.txt`에 작성해두고, 요청하고자 하는 topic에 맞춰서 `프롬프트 : ML, Modeling, Stat` 중 하나를 `prompt.txt` 하단에 붙여넣었습니다.
-- 이후 `gemini-cli`에 아래와 같은 내용으로 요청하였습니다. (~~~ 부분을 요청 내용에 맞춰서 수정)
+## 사용 방법
+
+- `gemini-cli` 를 활용하여 진행 예정
+
+1. 프로젝트 프롬프트는 `prompt.txt`에 작성
+2. 요청하고자 하는 topic에 맞춰서 `프롬프트 : ML, Modeling, Stat` 중 하나를 `prompt.txt` 하단에 추가
+3. `gemini-cli`에 아래와 같은 내용으로 요청 (~~~ 부분을 요청 내용에 맞춰서 수정)
 
 ```bash
 `prompt.txt`의 요구사항을 이행해줘. `topic`은 ~~~야.
