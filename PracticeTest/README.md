@@ -25,76 +25,6 @@
     - 출처 : <https://www.datamanim.com/dataset/ADPpb/index.html>
     - 출처 : <https://statisticsplaybook.com/adp-past-exam-questions/>
 
-# 시험 준비를 위한 Topic-List
-
-- 참고
-    - <https://well-being-stat.tistory.com/4>
-    - <https://coding-law.tistory.com/entry/번외4-KT-AIVLE-3기-ai트랙-28회-ADP-실기-합격>
-
-## KOCW 비모수통계학
-
-- <http://www.kocw.net/home/cview.do?mty=p&kemId=1004752>
-    - 12강 분산분석 파트, 13강 비모수적 방법 파트
-- <http://www.kocw.net/home/cview.do?mty=p&kemId=865635&ar=link_gil>
-    - 7강 모수검정과 비모수검정 파트
-- <http://www.kocw.net/home/cview.do?cid=7cc3a7f9daa84276>
-    - 2강 일표본 위치문제 파트 (부호검정 등)
-
-## 전처리
-
-- 사전작업(공통)
-- 연속형 변수변환, Scaling
-- 범주형 인코딩
-- 이상치 탐지+처리
-- 결측치 처리
-- EDA 시각화
-- Sampling
-- 시계열 데이터 전처리
-
-## 파이썬 문법
-
-- 핸들링(기초)
-- 핸들링(심화)
-
-## 모델링
-
-- 선형회귀
-- 정규화 선형모델
-- 비선형 모델(앙상블×)
-- 앙상블 모델
-- Simple DL
-- 베이지안 회귀
-- 차원축소, 변수선택법
-- 군집화
-- 연관규칙분석
-- 모델 평가 (지표, CV, Voting)
-- 모델링 결과 시각화
-
-## 통계
-
-- 단순 추정, 통계 계산
-- 선형모델(OLS, 정규화, Poly)
-- 로지스틱회귀
-- sm 기반 고급 모델
-- 단일표본 검정(+정규성)
-- 2개 집단 비교(독립표본)
-- 2개 집단 비교(대응표본)
-- 분산분석(다집단, ANOVA)
-- 상관관계 검정
-- 범주형 검정(독립,대응)
-- 비율 검정
-- 표본크기, 검정력
-- 신뢰구간
-- 다중공선성(Cor,VIF,PCA)
-- 베이지안 분석
-- 선형계획법
-- 이산확률분포
-- 연속확률분포
-- 시계열(sm, tsa)
-- 생존분석
-- 샘플 데이터 생성
-- 베이지안 모델링
-
 # 프롬프트 : 복원 문제별 도출해야하는 분석 방법
 
 1. 사전에 "시험문제 복원" 폴더까지 이동 후 `gemini-cli`를 실행하여 진행했습니다.
@@ -180,7 +110,7 @@ Regressor와 Classifier의 공통된 부분을 우선 설명해주고, 명시해
 {topic}에 관한 내용을 파이썬, 가능하면 stats나 sm, pingouin 중 가장 효율적인 코드 기반으로 작성해주세요.
 {topic}의 개념에 대해서, `용도-주의사항(가정 등)-사용방법(예시 및 코드)-해석 방법` 순서로 설명해주세요.
 
-# 오픈북 자료
+# 타인의 오픈북 자료
 
 - [GIL'sLAB](https://gils-lab.tistory.com/8)에서 다운받은 오픈북 자료
     1. [지도학습](<GIL'sLAB/1. 지도학습.html>)
@@ -191,3 +121,94 @@ Regressor와 Classifier의 공통된 부분을 우선 설명해주고, 명시해
     6. [데이터전처리](<GIL'sLAB/6. 데이터전처리 및 Pandas.html>)
     7. [시계열분석](<GIL'sLAB/7. 시계열분석.html>)
     8. [텍스트마이닝](<GIL'sLAB/8. 텍스트마이닝.html>)
+
+<details>
+  <summary><strong>시험 준비를 위한 Topic-List</strong></summary>
+  <ul>
+    <li>참고
+      <ul>
+        <li><a href="https://well-being-stat.tistory.com/4">https://well-being-stat.tistory.com/4</a></li>
+        <li><a href="https://coding-law.tistory.com/entry/번외4-KT-AIVLE-3기-ai트랙-28회-ADP-실기-합격">https://coding-law.tistory.com/entry/번외4-KT-AIVLE-3기-ai트랙-28회-ADP-실기-합격</a></li>
+      </ul>
+    </li>
+    <li>개인적으로 공부한 내용들(주제)은 별도의 마크다운 파일로 만들었습니다.</li>
+  </ul>
+
+  <h2>KOCW 비모수통계학</h2>
+  <ul>
+    <li><a href="http://www.kocw.net/home/cview.do?mty=p&kemId=1004752">http://www.kocw.net/home/cview.do?mty=p&kemId=1004752</a>
+      <ul>
+        <li>12강 분산분석 파트, 13강 비모수적 방법 파트</li>
+      </ul>
+    </li>
+    <li><a href="http://www.kocw.net/home/cview.do?mty=p&kemId=865635&ar=link_gil">http://www.kocw.net/home/cview.do?mty=p&kemId=865635&ar=link_gil</a>
+      <ul>
+        <li>7강 모수검정과 비모수검정 파트</li>
+      </ul>
+    </li>
+    <li><a href="http://www.kocw.net/home/cview.do?cid=7cc3a7f9daa84276">http://www.kocw.net/home/cview.do?cid=7cc3a7f9daa84276</a>
+      <ul>
+        <li>2강 일표본 위치문제 파트 (부호검정 등)</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h2>전처리</h2>
+  <ul>
+    <li>사전작업(공통)</li>
+    <li>연속형 변수변환, Scaling</li>
+    <li>범주형 인코딩</li>
+    <li>이상치 탐지+처리</li>
+    <li>결측치 처리</li>
+    <li>EDA 시각화</li>
+    <li>Sampling</li>
+    <li>시계열 데이터 전처리</li>
+  </ul>
+
+  <h2>파이썬 문법</h2>
+  <ul>
+    <li>핸들링(기초)</li>
+    <li>핸들링(심화)</li>
+  </ul>
+
+  <h2>모델링</h2>
+  <ul>
+    <li>선형회귀</li>
+    <li>정규화 선형모델</li>
+    <li>비선형 모델(앙상블×)</li>
+    <li>앙상블 모델</li>
+    <li>Simple DL</li>
+    <li>베이지안 회귀</li>
+    <li>차원축소, 변수선택법</li>
+    <li>군집화</li>
+    <li>연관규칙분석</li>
+    <li>모델 평가 (지표, CV, Voting)</li>
+    <li>모델링 결과 시각화</li>
+  </ul>
+
+  <h2>통계</h2>
+  <ul>
+    <li>단순 추정, 통계 계산</li>
+    <li>선형모델(OLS, 정규화, Poly)</li>
+    <li>로지스틱회귀</li>
+    <li>sm 기반 고급 모델</li>
+    <li>단일표본 검정(+정규성)</li>
+    <li>2개 집단 비교(독립표본)</li>
+    <li>2개 집단 비교(대응표본)</li>
+    <li>분산분석(다집단, ANOVA)</li>
+    <li>상관관계 검정</li>
+    <li>범주형 검정(독립,대응)</li>
+    <li>비율 검정</li>
+    <li>표본크기, 검정력</li>
+    <li>신뢰구간</li>
+    <li>다중공선성(Cor,VIF,PCA)</li>
+    <li>베이지안 분석</li>
+    <li>선형계획법</li>
+    <li>이산확률분포</li>
+    <li>연속확률분포</li>
+    <li>시계열(sm, tsa)</li>
+    <li>생존분석</li>
+    <li>샘플 데이터 생성</li>
+    <li>베이지안 모델링</li>
+  </ul>
+</details>
