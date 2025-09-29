@@ -69,11 +69,11 @@
 - **편상관 분석**
 - **선형 회귀**: `statsmodels.OLS`, `sklearn.LinearRegression`
 - **고급 회귀**:
-    - 다항 회귀 (`PolynomialFeatures`)
-    - 강건 회귀 (`Robust Regression`)
-    - 분위수 회귀 (`Quantile Regression`)
-    - 베이지안 회귀
-    - 일반화 선형 모델 (GLM): 푸아송, 감마, 음이항 회귀
+    - **다항 회귀** (`PolynomialFeatures`)
+    - **강건 회귀** (`Robust Regression`)
+    - **분위수 회귀** (`Quantile Regression`)
+    - **베이지안 회귀**
+    - **일반화 선형 모델 (GLM)**: 푸아송, 감마, 음이항 회귀
 - **회귀 진단**:
     - 선형성, 잔차의 정규성/등분산성/독립성(Durbin-Watson)
     - **다중공선성**: VIF 확인 및 처리
