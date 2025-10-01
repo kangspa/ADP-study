@@ -106,13 +106,14 @@
 # OpenBook-Jupyter
 
 - `Gemini`를 통해 생성된 `OpenBook` 폴더 안의 내용들을 `Jupyter` 환경에서 직접 실행하며 정리한 내용
-- 일종의 연습장으로, 잘못된 코드나 내용이 있을 경우 `OpenBook`의 마크다운 파일을 수정함
+- 일종의 연습장으로, 잘못된 코드나 내용이 있을 경우 수정해서 `OpenBook-PDF`에 작성
 
 # OpenBook-PDF
 
 - `Gemini`를 통해 생성된 `OpenBook` 폴더 안의 내용들을 수정 후 pdf로 추출한 폴더
 - 실질적으로 시험장에 출력해서 갖고 갈 파일로, VSCode의 `Markdown PDF` 확장프로그램을 사용
-
+- 해당 폴더에 내용 제대로 정리가 끝날 경우, 기존의 `OpenBook` 폴더 내용은 삭제하면서 진행
+- 완성되면 기존 `OpenBook` 폴더는 삭제 예정
 
 # 타인의 오픈북 자료
 
