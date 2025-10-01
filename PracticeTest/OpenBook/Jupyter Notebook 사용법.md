@@ -42,6 +42,9 @@ Jupyter의 기본 자동완성(Jedi)이 너무 느리거나 불편할 경우, �
 %config Completer.use_jedi = True
 ```
 
+만약 단어(문장) 드래그 후 좌우 자동으로 괄호나 따옴표 닫는게 안된다면,<br>
+`Settings > Auto Close Brackets`를 설정하면 된다.
+
 ## 3. 한글 폰트 깨짐 해결 (Matplotlib)
 
 Matplotlib 시각화 시 한글이 깨져 보일 경우, 아래 코드를 실행하여 시스템에 맞는 한글 폰트를 설정합니다.

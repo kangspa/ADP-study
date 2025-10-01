@@ -25,7 +25,7 @@
     - 출처 : <https://www.datamanim.com/dataset/ADPpb/index.html>
     - 출처 : <https://statisticsplaybook.com/adp-past-exam-questions/>
 
-# 프롬프트 : 복원 문제별 도출해야하는 분석 방법
+## 프롬프트 : 복원 문제별 도출해야하는 분석 방법
 
 1. 사전에 "시험문제 복원" 폴더까지 이동 후 `gemini-cli`를 실행하여 진행했습니다.
 
@@ -61,7 +61,7 @@
 `prompt.txt` 파일을 읽고, 해당 내용을 이행해줘. `filename`은 다음과 같은 목록을 순차적으로 순회하면서 prompt를 진행하면 돼. ["제24회.md", "제25회.md", "제26회.md", "제27회.md", "제28회.md", "제29회.md", "제30회.md", "제31회.md", "제33회.md"].
 ```
 
-# 프롬프트 : 오픈북 생성
+# 프롬프트 : OpenBook 생성
 
 - 프롬프트 참고 : <https://well-being-stat.tistory.com/4>
 
@@ -102,6 +102,17 @@
         - 하이퍼파라미터 입력 값 조건(or 범위), 어떤 상황에서 어떻게 변경해야하는지 등
 - 해당 주제 및 코드에 대해 주의사항(가정 등)이 작성 필요할 경우, 함께 작성해주세요.
 ```
+
+# OpenBook-Jupyter
+
+- `Gemini`를 통해 생성된 `OpenBook` 폴더 안의 내용들을 `Jupyter` 환경에서 직접 실행하며 정리한 내용
+- 일종의 연습장으로, 잘못된 코드나 내용이 있을 경우 `OpenBook`의 마크다운 파일을 수정함
+
+# OpenBook-PDF
+
+- `Gemini`를 통해 생성된 `OpenBook` 폴더 안의 내용들을 수정 후 pdf로 추출한 폴더
+- 실질적으로 시험장에 출력해서 갖고 갈 파일로, VSCode의 `Markdown PDF` 확장프로그램을 사용
+
 
 # 타인의 오픈북 자료
 
