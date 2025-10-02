@@ -64,6 +64,10 @@
 # 프롬프트 : OpenBook 생성
 
 - 프롬프트 참고 : <https://well-being-stat.tistory.com/4>
+- `OpenBook` 폴더로 생성 후, `OpenBook-Gemini`로 폴더명을 변경했습니다.
+- `Gemini`로 생성된 내용은 정리 후 `OpenBook` 폴더에 새로 정리했습니다.
+  - 해당 과정에서 정리 완료된 `OpenBook-Gemini` 내용은 삭제하였습니다.
+- VSCode의 `Markdown PDF` 확장프로그램을 사용하여 PDF로 추출 후 출력했습니다.
 
 ## 사용 방법
 
@@ -102,18 +106,6 @@
         - 하이퍼파라미터 입력 값 조건(or 범위), 어떤 상황에서 어떻게 변경해야하는지 등
 - 해당 주제 및 코드에 대해 주의사항(가정 등)이 작성 필요할 경우, 함께 작성해주세요.
 ```
-
-# OpenBook-Jupyter
-
-- `Gemini`를 통해 생성된 `OpenBook` 폴더 안의 내용들을 `Jupyter` 환경에서 직접 실행하며 정리한 내용
-- 일종의 연습장으로, 잘못된 코드나 내용이 있을 경우 수정해서 `OpenBook-PDF`에 작성
-
-# OpenBook-PDF
-
-- `Gemini`를 통해 생성된 `OpenBook` 폴더 안의 내용들을 수정 후 pdf로 추출한 폴더
-- 실질적으로 시험장에 출력해서 갖고 갈 파일로, VSCode의 `Markdown PDF` 확장프로그램을 사용
-- 해당 폴더에 내용 제대로 정리가 끝날 경우, 기존의 `OpenBook` 폴더 내용은 삭제하면서 진행
-- 완성되면 기존 `OpenBook` 폴더는 삭제 예정
 
 # 타인의 오픈북 자료
 

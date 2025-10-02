@@ -2,32 +2,7 @@
 
 ## Part 1: 데이터 기초 및 전처리 (Data Basics & Preprocessing)
 
-### 1.1. Python 기초 (Python Basics)
-- **개발 환경**: Jupyter Notebook 사용법 및 단축키
-- **기본 문법**: Python 기본 자료구조(List, Dict, Set, Tuple), 제어문, 함수, 클래스
-- **핵심 라이브러리**:
-    - **Numpy**: 배열 생성 및 조작, 벡터 연산, 브로드캐스팅
-    - **Pandas**: Series, DataFrame 생성 및 조작, 인덱싱, 정렬, 그룹화(groupby)
-    - **Scipy**: 기초 통계 함수 활용
-
-### 1.2. 데이터 핸들링 (Data Handling)
-- **데이터 입출력**: `pd.read_csv`, `pd.read_excel`, `df.to_csv` 등
-- **데이터 구조 확인**: `df.head()`, `df.info()`, `df.describe()`, `df.shape`, `df.isnull().sum()`
-- **데이터 조작**:
-    - 행/열 선택, 추가, 삭제
-    - 데이터 타입 변경 (`astype`)
-    - 조건 기반 필터링
-    - 함수 적용 (`apply`, `map`)
-- **데이터 결합**:
-    - `pd.concat` (행/열 기준 결합)
-    - `pd.merge` (SQL-style join)
-
 ### 1.3. 데이터 정제 (Data Cleansing)
-- **결측치 처리**:
-    - 확인: `isnull()`, `isna()`
-    - 제거: `dropna()`
-    - 대치: `fillna()` (평균, 중앙값, 최빈값 등)
-    - 보간: `interpolate()`
 - **이상치 탐지 및 처리**:
     - Box Plot, Scatter Plot을 이용한 시각적 탐지
     - Z-score, IQR(Interquartile Range)을 이용한 탐지
