@@ -44,6 +44,7 @@
     - statsmodels==0.13.2
     - scikit-learn==0.23.2
     - matplotlib==3.0.3
+    - seaborn==0.9.0
     - torch==1.7.1
     - torchvision==0.2.2.post3
 
