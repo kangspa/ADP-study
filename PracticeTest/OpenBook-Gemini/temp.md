@@ -5,14 +5,91 @@
 - pd.to_datetime() : object 형태의 날짜 데이터를 datetime 데이터로 바꿔준다.
     - format = ‘ ‘ : 입력하는 날짜의 형태가 어떤 형식인지 알려주는 옵션
                          ‘%Y-%m-%d’ : ‘몇년-몇월-몇일’ 로 작성된지 알려줌
-                         → 왠만해서는 혼자서 format 형식을 잡을 수 있
-    - 자세한 내용은 아래 링크, 공식 문서에서 알 수 있음
-    
-    https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior
+                         → 왠만해서는 혼자서 format 형식을 잡을 수 있음
+- `strftime()` : 날짜/시간 → 문자열
+    ```python
+    from datetime import datetime
+
+    now = datetime.now()
+    print(now)  
+    # 2025-10-03 14:22:15.123456
+
+    # 원하는 형식으로 문자열 변환
+    print(now.strftime("%Y-%m-%d %H:%M:%S"))  
+    # '2025-10-03 14:22:15'
+    ```
+- `strptime()` : 문자열 → 날짜/시간
+    ```python
+    from datetime import datetime
+
+    date_str = "2025-10-03 14:22:15"
+
+    dt = datetime.strptime(date_str, "%Y-%m-%d %H:%M:%S")
+    print(dt)  
+    # 2025-10-03 14:22:15
+    print(type(dt))  
+    # <class 'datetime.datetime'>
+    ```
+- datetime 포맷 코드 표
+
+| Directive | Meaning                                     | Example                                           |
+|-----------|---------------------------------------------|---------------------------------------------------|
+| %a        | Weekday as locale’s abbreviated name        | Sun, Mon, …, Sat (en_US); So, Mo, …, Sa (de_DE)   |
+| %A        | Weekday as locale’s full name               | Sunday, Monday, …, Saturday (en_US); Sonntag, Montag, …, Samstag (de_DE) |
+| %w        | Weekday as a decimal number (0=Sunday, 6=Saturday) | 0, 1, …, 6                                   |
+| %d        | Day of the month (zero-padded)              | 01, 02, …, 31                                     |
+| %b        | Month as locale’s abbreviated name          | Jan, Feb, …, Dec (en_US); Jan, Feb, …, Dez (de_DE)|
+| %B        | Month as locale’s full name                 | January, February, …, December (en_US); Januar, Februar, …, Dezember (de_DE) |
+| %m        | Month as a zero-padded decimal number       | 01, 02, …, 12                                     |
+| %y        | Year without century (zero-padded)          | 00, 01, …, 99                                     |
+| %Y        | Year with century                           | 0001, 0002, …, 2013, …, 9999                      |
+| %H        | Hour (24-hour clock, zero-padded)           | 00, 01, …, 23                                     |
+| %I        | Hour (12-hour clock, zero-padded)           | 01, 02, …, 12                                     |
+| %p        | AM/PM (locale)                              | AM, PM (en_US); am, pm (de_DE)                    |
+| %M        | Minute (zero-padded)                        | 00, 01, …, 59                                     |
+| %S        | Second (zero-padded)                        | 00, 01, …, 59                                     |
+| %f        | Microsecond (6 digits, zero-padded)         | 000000, …, 999999                                 |
+| %z        | UTC offset                                  | +0000, -0400, +1030, +063415, -030712.345216      |
+| %Z        | Time zone name                              | UTC, GMT, (empty if naive)                        |
+| %j        | Day of the year (zero-padded)               | 001, 002, …, 366                                  |
+| %U        | Week number (Sunday first, zero-padded)     | 00, 01, …, 53                                     |
+| %W        | Week number (Monday first, zero-padded)     | 00, 01, …, 53                                     |
+| %c        | Locale’s date and time                      | Tue Aug 16 21:30:00 1988 (en_US)                  |
+| %x        | Locale’s date representation                | 08/16/88 (en_US); 16.08.1988 (de_DE)              |
+| %X        | Locale’s time representation                | 21:30:00 (en_US)                                  |
+| %%        | Literal '%' character                       | %                                                 |
+
     
 - Series.dt.날짜요소 : 날짜 타입의 변수로부터 날짜 요소를 뽑아낼 수 있다.
     
-    ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/336edc9f-be08-4746-ae72-23d96c4f092a/26cc622c-1a9c-4006-b631-d23394411840/Untitled.png)
+    - 📌 Series.dt 접근자 기본 메서드
+
+    | 메서드                        | 내용                                |
+    |-------------------------------|-------------------------------------|
+    | `df['date'].dt.date`          | YYYY-MM-DD (문자)                   |
+    | `df['date'].dt.year`          | 연 (4자리 숫자)                     |
+    | `df['date'].dt.month`         | 월 (숫자)                           |
+    | `df['date'].dt.month_name()`  | 월 (문자)                           |
+    | `df['date'].dt.day`           | 일 (숫자)                           |
+    | `df['date'].dt.time`          | HH:MM:SS (문자)                     |
+    | `df['date'].dt.hour`          | 시 (숫자)                           |
+    | `df['date'].dt.minute`        | 분 (숫자)                           |
+    | `df['date'].dt.second`        | 초 (숫자)                           |
+    | `df['date'].dt.quarter`       | 분기 (숫자)                         |
+    | `df['date'].dt.day_name()`    | 요일 이름 (문자)                    |
+    | `df['date'].dt.weekday`       | 요일 숫자 (0=월, 6=일)              |
+    | `df['date'].dt.dayofyear`     | 연 기준 몇 일째 (숫자)              |
+    | `df['date'].dt.days_in_month` | 월 일수 (=daysinmonth) (숫자)       |
+
+    - 📌 Series.dt vs Series.dt.isocalendar()
+
+    | 구분 | `air['Date'].dt`             | `air['Date'].dt.isocalendar()` |
+    |------|------------------------------|--------------------------------|
+    | 일   | `day`                        | X                              |
+    | 월   | `month`                      | X                              |
+    | 연   | `year`                       | `year`                         |
+    | 주차 | X                            | `week`                         |
+    | 요일 | `weekday` : 0~6 (월~일)      | `day` : 1~7 (월~일)            |
     
 - .shift() : 시계열 데이터에서 시간의 흐름 전후로 정보를 이동시킬 때 사용
     - 양수 값은 해당 숫자만큼 더해진 날짜에 넣어줌 (default = 1)
