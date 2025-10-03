@@ -2,6 +2,15 @@
 
 Jupyter Notebook의 생산성을 높이는 주요 단축키와 편의 기능, 그리고 일반적인 문제 해결 방법을 정리합니다.
 
+## 0. 경고 메세지 삭제
+
+- 평소에는 코드 효율이나 통일 등을 위해 경고를 켜두는게 좋을 수 있으나, 시험 제출을 위해서 쓸데없는 정보가 추가로 뜨는 것은 삭제가 좋음.
+
+```python
+import warnings
+warnings.filterwarnings('ignore')
+```
+
 ## 1. 단축키 (VSCode 스타일)
 
 Jupyter Notebook은 **명령 모드(Command Mode)**와 **편집 모드(Edit Mode)**를 가집니다.
