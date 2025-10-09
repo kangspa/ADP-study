@@ -1,10 +1,8 @@
 # 맥니마 검정 (McNemar's Test)
 
-### 개념 요약
-
-맥니마 검정은 **대응되는(paired) 명목형 데이터(nominal data)**에서 두 변수의 주변 확률(marginal probabilities) 또는 비율이 동일한지를 검정하는 비모수적 통계 방법입니다. 주로 어떤 사건이나 처리(treatment)의 **전후(before-and-after)** 효과를 비교할 때 사용됩니다.
-
-예를 들어, 특정 캠페인 실시 전과 후의 제품 구매 여부 변화, 또는 특정 약물 투여 전과 후의 질병 완치 여부 변화를 분석하는 데 적합합니다.
+- **대응되는(paired) 명목형 데이터(nominal data)**에서 두 변수의 주변 확률(marginal probabilities) 또는 비율이 동일한지를 검정하는 비모수적 통계 방법
+- 주로 어떤 사건이나 처리(treatment)의 **전후(before-and-after)** 효과를 비교할 때 사용
+    - 특정 캠페인 실시 전과 후의 제품 구매 여부 변화, 특정 약물 투여 전과 후의 질병 완치 여부 변화
 
 검정은 아래와 같은 2x2 분할표에서 **변화가 일어난 셀(b, c)**에만 초점을 맞춥니다.
 
@@ -33,16 +31,14 @@
 
 ### 구현 방법
 
-#### 용도
-
 `statsmodels.stats.contingency_tables.mcnemar` 함수를 사용하여 맥니마 검정을 수행할 수 있습니다.
 
-#### 주의사항 (가정)
+### 주의사항 (가정)
 
 - **대응 표본**: 데이터는 반드시 대응되는 쌍으로 이루어져야 합니다. 독립적인 두 집단에는 카이제곱 독립성 검정을 사용해야 합니다.
 - **표본 크기**: 변화가 일어난 두 셀의 빈도 합(b+c)이 충분히 커야 카이제곱 분포 근사가 유효합니다. 일반적으로 `b+c >= 25` 정도를 권장합니다. 만약 이 값이 작다면(예: 25 미만), **이항 분포를 이용한 정확 검정(Exact Test)**을 수행해야 합니다.
 
-#### 코드 예시
+## 코드 예시
 
 `statsmodels.stats.contingency_tables.mcnemar(table, exact=True, correction=True)`
 
@@ -53,8 +49,6 @@
     - `True`: 변화가 일어난 셀의 빈도 합(b+c)이 작은 경우, 이항 분포를 이용한 정확한 p-value를 계산합니다. (권장)
     - `False`: 카이제곱 분포 근사를 사용하여 p-value를 계산합니다.
 - `correction`: bool (기본값: `True`). 연속성 수정(continuity correction) 적용 여부. `exact=False`일 때만 의미가 있으며, 카이제곱 근사의 정확도를 높이기 위해 사용됩니다.
-
-**코드**
 
 ```python
 import numpy as np
@@ -92,43 +86,47 @@ table = np.array([[20, 10],
 # b+c = 10+60 = 70 이므로 충분히 크지만, exact=True 사용이 일반적으로 더 안전합니다.
 result = mcnemar(table, exact=True)
 
-print(f"Statistic (b+c): {result.statistic}") # exact=True일 경우, b와 c 중 작은 값
-print(f"P-value: {result.pvalue:.4f}")
+print(f"Statistic (b+c): {result.statistic}") # 10.0, exact=True일 경우, b와 c 중 작은 값
+print(f"P-value: {result.pvalue:.4f}") # 0.0000
 
-# 결과 해석
+# 결과 해석: "귀무가설 기각: 약물 투여 전후의 완치율에는 통계적으로 유의미한 변화가 있습니다."
 alpha = 0.05
 if result.pvalue < alpha:
     print("귀무가설 기각: 약물 투여 전후의 완치율에는 통계적으로 유의미한 변화가 있습니다.")
 else:
     print("귀무가설 채택: 약물 투여 전후의 완치율 변화는 유의미하지 않습니다.")
 
-
 # 만약 exact=False (카이제곱 근사)를 사용한다면
 result_chi2 = mcnemar(table, exact=False, correction=True)
 print("\n--- Chi-squared approximation ---")
 print(f"Chi-squared statistic: {result_chi2.statistic:.4f}")
 print(f"P-value: {result_chi2.pvalue:.4f}")
+'''
+--- Chi-squared approximation ---
+Chi-squared statistic: 34.3000
+P-value: 0.0000
+'''
 ```
 
-#### 결과 해석 방법
+### 결과 해석 방법
 
 - **Statistic**: `exact=True`일 경우, b와 c 중 작은 값이 반환됩니다. `exact=False`일 경우, 카이제곱 검정 통계량이 반환됩니다.
 - **P-value**: 귀무가설(처리 전후의 비율에 차이가 없다)이 참일 때, 현재와 같은 결과 또는 더 극단적인 결과가 관찰될 확률입니다.
     - `p-value < 유의수준`: 귀무가설을 기각합니다. 즉, 처리(개입) 전후에 유의미한 비율 변화가 있었다고 결론 내릴 수 있습니다.
 
-### 장단점 및 대안
+## 장단점 및 대안
 
-#### 장점
+### 장점
 
 - **대응 표본 분석**: 대응되는 쌍으로 이루어진 명목형 데이터의 변화를 분석하는 데 특화되어 있습니다.
 - **간단함**: 2x2 분할표를 사용하여 간단하게 전후 효과를 검정할 수 있습니다.
 
-#### 단점
+### 단점
 
 - **정보 손실**: 변화가 없는 셀(a, d)의 정보는 무시하고, 변화가 있는 셀(b, c)에만 초점을 맞춥니다.
 - **적용 제한**: 2x2 형태의 대응 표본에만 적용 가능합니다. 3개 이상의 범주나 3회 이상의 시점 비교에는 사용할 수 없습니다.
 
-#### 대안
+### 대안
 
 - **코크란의 Q 검정 (Cochran's Q Test)**: 맥니마 검정을 확장한 형태로, 3개 이상의 대응 표본(예: 시점 1, 2, 3)에 대한 이분형 변수의 비율 변화를 검정할 때 사용합니다.
 - **카이제곱 독립성 검정 (Chi-squared Test of Independence)**: **서로 다른 두 변수가 독립적인지**를 검정합니다. 맥니마 검정은 **동일한 변수의 시간/조건에 따른 변화**를 검정한다는 점에서 근본적인 차이가 있습니다. 대응 표본에 카이제곱 독립성 검정을 잘못 적용하면 잘못된 결론을 내릴 수 있습니다.
