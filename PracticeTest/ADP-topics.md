@@ -121,7 +121,8 @@
 
 - **시계열 특성**: 정상성(Stationarity), 자기상관(Autocorrelation)
 - **정상성 검정**: `ADF` (Augmented Dickey-Fuller) Test
-- **평활법**: 이동평균, 지수평활법 (Holt-Winters)
+- **시계열 데이터 처리**
+    - 이동, 이동 통계량, 차분, 집계, 평활법(이동평균, 지수평활법 (Holt-Winters))
 - **시계열 분해**: 추세, 계절성, 주기, 불규칙 요소
 - **시계열 파악**: ACF, PACF 플롯
 - **시계열 모델**: `AR`, `MA`, `ARMA`, `ARIMA`, `SARIMA`
