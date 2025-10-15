@@ -13,15 +13,13 @@ def find_files(ext=None, base_dir='.'):
 
 pdf_files = find_files('pdf')
 print(f"총 {len(pdf_files)}개의 파일 발견:")
-for pdf in pdf_files:
-    print(f"  {pdf}")
-'''
+# for pdf in pdf_files: print(f"  {pdf}")
+
 merger = PdfMerger()
 for pdf in pdf_files:
     merger.append(PdfReader(open(pdf, 'rb')))
     print(f"  {pdf}")
 
-merger.write("merged.pdf")
+merger.write("제35회ADP실기오픈북[251015].pdf")
 merger.close()
-print("merged.pdf 생성 완료")
-'''
+print("제35회ADP실기오픈북[251015].pdf 생성 완료")
