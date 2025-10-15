@@ -1,4 +1,4 @@
-# ADP 실기 시험 대비 학습 주제 (by Gemini)
+# ADP 실기 시험 대비 학습 주제
 
 - **개발 환경**: Jupyter Notebook 사용법 및 단축키
 
@@ -6,7 +6,6 @@
 
 ### 1.1. 데이터 핸들링
 - **Python 기초**: List, Dict, Set, Tuple, 함수, 클래스
-- **핵심 라이브러리**: Numpy, Pandas, Scipy
 - **데이터 입출력**: `read_csv`, `read_excel`, `to_csv`
 - **데이터 구조 확인**: `head`, `info`, `describe`, `shape`, `isnull.sum`
 - **데이터 조작**: 행/열 선택 및 변경, 데이터 타입 변경, 필터링, `apply`, `map`

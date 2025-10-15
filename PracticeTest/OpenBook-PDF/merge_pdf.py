@@ -1,27 +1,27 @@
 import os
+from PyPDF2 import PdfMerger, PdfReader
 
-def find_markdown_files(base_dir='.'):
-    md_files = []
+def find_files(ext=None, base_dir='.'):
+    result = []
     for root, dirs, files in os.walk(base_dir):
         for file in files:
-            if file.lower().endswith('.md'):
-                md_files.append(os.path.join(root, file))
-    return md_files
+            if ext:
+                if file.endswith(ext):
+                    result.append(os.path.join(root, file))
+            else: result.append(os.path.join(root, file))
+    return result
 
-# 사용 예시
-if __name__ == "__main__":
-    markdown_files = find_markdown_files()
-    print(f"총 {len(markdown_files)}개의 md 파일 발견:")
-    for f in markdown_files:
-        print(f)
-
-from PyPDF2 import PdfMerger
-
-pdfs = ['file1.pdf', 'file2.pdf', 'file3.pdf']
+pdf_files = find_files('pdf')
+print(f"총 {len(pdf_files)}개의 파일 발견:")
+for pdf in pdf_files:
+    print(f"  {pdf}")
+'''
 merger = PdfMerger()
-
-for pdf in pdfs:
-    merger.append(pdf)
+for pdf in pdf_files:
+    merger.append(PdfReader(open(pdf, 'rb')))
+    print(f"  {pdf}")
 
 merger.write("merged.pdf")
 merger.close()
+print("merged.pdf 생성 완료")
+'''
