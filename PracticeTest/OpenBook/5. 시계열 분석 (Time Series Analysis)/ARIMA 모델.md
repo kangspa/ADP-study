@@ -229,3 +229,6 @@ plt.show()
     - **Prophet**: 휴일 효과나 여러 계절성을 자동으로 처리하며, 비전문가도 쉽게 사용할 수 있는 시계열 예측 라이브러리입니다.
     - **VAR (Vector Autoregression)**: 여러 시계열 간의 상호작용을 모델링하는 데 사용됩니다.
     - **머신러닝/딥러닝 모델**: 시계열 데이터를 특성으로 변환하여 일반적인 회귀 모델을 적용하거나, LSTM, GRU와 같은 순환 신경망(RNN)을 사용하여 복잡한 시계열 패턴을 학습할 수 있습니다.
+
+- SARIMA 모델은 `statsmodels.tsa.statespace.sarimax.SARIMAX` 을 통해서도 구현 가능
+- MARIMA: Multivariate ARIMA 모델이 존재, `statsmodels.tsa.statespace.varmax.VARMAX` 을 통해서 구현 가능

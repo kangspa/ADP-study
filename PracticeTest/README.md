@@ -18,7 +18,7 @@
 
 - 곽기영 교수님 통계 강의 확인 : <https://youtube.com/playlist?list=PLY0OaF78qqGAxKX91WuRigHpwBU0C2SB_&si=Kag_O-KOsjV1BJUg>
 
-# 시험문제 복원 출처 관련
+# 시험문제 복원 관련
 
 - 마크다운으로 작성해둔 모든 복원 기출 문제는 웹서핑 통해서 볼 수 있는, 오픈되어 있는 블로그 글들에서 가져왔습니다.
 - 각 문제지 최상단에 출처를 작성해뒀는데, 원본 글로 이동할 경우 블로거가 제작해둔 데이터를 볼 수도 있습니다.
@@ -114,105 +114,9 @@
 - 해당 주제 및 코드에 대해 주의사항(가정 등)이 작성 필요할 경우, 함께 작성해주세요.
 ```
 
-# 타인의 오픈북 자료
+# KOCW 비모수 통계학 참고 자료
 
-- [GIL'sLAB](https://gils-lab.tistory.com/8)에서 다운받은 오픈북 자료
-    1. [지도학습](<GIL'sLAB/1. 지도학습.html>)
-    2. [통계분석](<GIL'sLAB/2. 통계분석.html>)
-    3. [연관분석](<GIL'sLAB/3. 연관분석.html>)
-    4. [군집화](<GIL'sLAB/4. 군집화.html>)
-    5. [데이터시각화](<GIL'sLAB/5. 데이터시각화.html>)
-    6. [데이터전처리](<GIL'sLAB/6. 데이터전처리 및 Pandas.html>)
-    7. [시계열분석](<GIL'sLAB/7. 시계열분석.html>)
-    8. [텍스트마이닝](<GIL'sLAB/8. 텍스트마이닝.html>)
-
-<details>
-  <summary><strong>시험 준비를 위한 Topic-List</strong></summary>
-  <ul>
-    <li>참고
-      <ul>
-        <li><a href="https://well-being-stat.tistory.com/4">https://well-being-stat.tistory.com/4</a></li>
-        <li><a href="https://coding-law.tistory.com/entry/번외4-KT-AIVLE-3기-ai트랙-28회-ADP-실기-합격">https://coding-law.tistory.com/entry/번외4-KT-AIVLE-3기-ai트랙-28회-ADP-실기-합격</a></li>
-      </ul>
-    </li>
-    <li>개인적으로 공부한 내용들(주제)은 별도의 마크다운 파일로 만들었습니다.</li>
-  </ul>
-
-  <h2>KOCW 비모수통계학</h2>
-  <ul>
-    <li><a href="http://www.kocw.net/home/cview.do?mty=p&kemId=1004752">http://www.kocw.net/home/cview.do?mty=p&kemId=1004752</a>
-      <ul>
-        <li>12강 분산분석 파트, 13강 비모수적 방법 파트</li>
-      </ul>
-    </li>
-    <li><a href="http://www.kocw.net/home/cview.do?mty=p&kemId=865635&ar=link_gil">http://www.kocw.net/home/cview.do?mty=p&kemId=865635&ar=link_gil</a>
-      <ul>
-        <li>7강 모수검정과 비모수검정 파트</li>
-      </ul>
-    </li>
-    <li><a href="http://www.kocw.net/home/cview.do?cid=7cc3a7f9daa84276">http://www.kocw.net/home/cview.do?cid=7cc3a7f9daa84276</a>
-      <ul>
-        <li>2강 일표본 위치문제 파트 (부호검정 등)</li>
-      </ul>
-    </li>
-  </ul>
-
-  <h2>전처리</h2>
-  <ul>
-    <li>사전작업(공통)</li>
-    <li>연속형 변수변환, Scaling</li>
-    <li>범주형 인코딩</li>
-    <li>이상치 탐지+처리</li>
-    <li>결측치 처리</li>
-    <li>EDA 시각화</li>
-    <li>Sampling</li>
-    <li>시계열 데이터 전처리</li>
-  </ul>
-
-  <h2>파이썬 문법</h2>
-  <ul>
-    <li>핸들링(기초)</li>
-    <li>핸들링(심화)</li>
-  </ul>
-
-  <h2>모델링</h2>
-  <ul>
-    <li>선형회귀</li>
-    <li>정규화 선형모델</li>
-    <li>비선형 모델(앙상블×)</li>
-    <li>앙상블 모델</li>
-    <li>Simple DL</li>
-    <li>베이지안 회귀</li>
-    <li>차원축소, 변수선택법</li>
-    <li>군집화</li>
-    <li>연관규칙분석</li>
-    <li>모델 평가 (지표, CV, Voting)</li>
-    <li>모델링 결과 시각화</li>
-  </ul>
-
-  <h2>통계</h2>
-  <ul>
-    <li>단순 추정, 통계 계산</li>
-    <li>선형모델(OLS, 정규화, Poly)</li>
-    <li>로지스틱회귀</li>
-    <li>sm 기반 고급 모델</li>
-    <li>단일표본 검정(+정규성)</li>
-    <li>2개 집단 비교(독립표본)</li>
-    <li>2개 집단 비교(대응표본)</li>
-    <li>분산분석(다집단, ANOVA)</li>
-    <li>상관관계 검정</li>
-    <li>범주형 검정(독립,대응)</li>
-    <li>비율 검정</li>
-    <li>표본크기, 검정력</li>
-    <li>신뢰구간</li>
-    <li>다중공선성(Cor,VIF,PCA)</li>
-    <li>베이지안 분석</li>
-    <li>선형계획법</li>
-    <li>이산확률분포</li>
-    <li>연속확률분포</li>
-    <li>시계열(sm, tsa)</li>
-    <li>생존분석</li>
-    <li>샘플 데이터 생성</li>
-    <li>베이지안 모델링</li>
-  </ul>
-</details>
+- 참고 내용 출처 : <https://coding-law.tistory.com/entry/번외4-KT-AIVLE-3기-ai트랙-28회-ADP-실기-합격>
+- [12강 분산분석 파트, 13강 비모수적 방법 파트](http://www.kocw.net/home/cview.do?mty=p&kemId=1004752)
+- [7강 모수검정과 비모수검정 파트](http://www.kocw.net/home/cview.do?mty=p&kemId=865635&ar=link_gil)
+- [2강 일표본 위치문제 파트 (부호검정 등)](http://www.kocw.net/home/cview.do?cid=7cc3a7f9daa84276)

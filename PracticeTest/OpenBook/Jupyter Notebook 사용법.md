@@ -11,7 +11,7 @@ import warnings
 warnings.filterwarnings('ignore')
 ```
 
-## 1. 단축키 (VSCode 스타일)
+## 1. 단축키
 
 Jupyter Notebook은 **명령 모드(Command Mode)**와 **편집 모드(Edit Mode)**를 가집니다.
 - **편집 모드 (초록색 테두리)**: 셀에 코드를 입력할 수 있는 상태. `Enter` 키로 진입합니다.
@@ -97,6 +97,47 @@ font_list[:]
 #font_list = [font.name for font in fm.fontManager.ttflist]
 ```
 
+제35회 ADP 실기 시험 기준, 폰트 파일 위치를 직접 지정해서 설정 시 아래와 같이 진행하면 된다.
+
+```python
+import matplotlib.pyplot as plt
+from matplotlib import font_manager, rc
+import matplotlib as mpl
+
+# 폰트 경로 지정
+font_path = '/usr/share/fonts/nanum/NanumGothic.ttf'
+
+# 폰트 이름 가져오기
+font_name = font_manager.FontProperties(fname=font_path).get_name()
+
+# 전역 설정
+mpl.rc('font', family=font_name)
+
+# 음수 부호 깨짐 방지
+mpl.rcParams['axes.unicode_minus'] = False
+
+# 테스트
+plt.title('한글 폰트 테스트')
+plt.plot([1, 2, 3], [1, 4, 9])
+plt.xlabel('가로축')
+plt.ylabel('세로축')
+plt.show()
+```
+
+이외에 `matplot` 전역 설정값은 아래와 같이 작성 가능하다.
+
+```python
+import matplotlib.pyplot as plt
+plt.rcParams["figure.figsize"] = (20,10) # 그래프 기본 크기 설정
+
+plt.rcParams['font.size'] = 12 # 기본 폰트 크기 설정
+plt.rcParams['axes.labelsize'] = 10 # x,y 레이블 폰트 크기 
+plt.rcParams['axes.titlesize'] = 10 # 축 제목 글꼴 크기
+plt.rcParams['xtick.labelsize'] = 6 # x축 tick 레이블의 글꼴 크기
+plt.rcParams['ytick.labelsize'] = 6 # y축 tick 레이블의 글꼴 크기
+plt.rcParams['legend.fontsize'] = 10 # 범례 글꼴 크기
+```
+
 ## 4. PDF로 내보내기 (Export to PDF)
 
 HTML로 변환 후 브라우저의 인쇄 기능을 사용하는 것이 간편합니다.
@@ -107,3 +148,8 @@ HTML로 변환 후 브라우저의 인쇄 기능을 사용하는 것이 간편�
 
 - 코드가 너무 길 경우, 백슬래시(`\`)를 이용해서 줄을 나눌 수 있습니다.
 - 전체 코드를 괄호를 활용해 감쌀 수도 있습니다.
+
+## 참고용 함수
+
+현재 사용하는 함수에 대해 어떤 메소드를 지원하고 하이퍼파라미터가 있는지 알 수 없다면, `help()`로 감싸서 출력하면 됩니다.<br>
+오픈 라이브러리 사용이 불가한 시험 환경 특성상 유용하게 사용 가능합니다.
