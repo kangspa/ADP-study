@@ -46,9 +46,10 @@
     - matplotlib==3.0.3
     - seaborn==0.9.0
     - pingouin==0.3.5
-    - torch==1.7.1
+    - torch==1.0.1.post2
     - torchvision==0.2.2.post3
     - Keras==2.2.4
+    - tensorflow==1.13.1
     - PuLP==2.5.0
 
 {filename}을 읽고, 각 문제별 어떤 분석 방법으로 접근해야하는지 가능한 모든 방법을 전부 알려주세요.

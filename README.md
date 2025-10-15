@@ -205,24 +205,28 @@ EDA 과정에서 결측값 처리, 이상값 수정, 변수 변환 및 파생 �
 - 참고 : <https://well-being-stat.tistory.com/2>
 
 1. conda 가상 환경을 아래와 같이 생성
-```bash
-conda create -n ADP-study python=3.7
-```
+    ```bash
+    conda create -n ADP-study python=3.7
+    ```
 2. `ADP-study` 환경 실행
-```bash
-conda activate ADP-study
-```
+    ```bash
+    conda activate ADP-study
+    ```
 3. 주피터 노트북을 `conda` 명령어로 설치
-```bash
-conda install jupyter
-```
+    ```bash
+    conda install jupyter
+    ```
 4. 충돌 방지를 위해, 필수 패키지를 우선 아래와 같이 설치
-```bash
-pip install -r requirement.txt
-```
+    ```bash
+    pip install -r key-requirements.txt
+    ```
 5. 시험장과 동일한 환경 구성
-```bash
-for /F "tokens=*" %i in (requirements.txt) do @pip show %i.split("==")[0] 2>NUL || pip install --no-deps %i
-```
+    ```bash
+    for /F "tokens=*" %i in (35-linux-pck.txt) do @pip show %i.split("==")[0] 2>NUL || pip install --no-deps %i
+    ```
+    - window 환경이라서 그런건지, conda로 가상환경 구축해서 그런건지, `pip install -r 35-linux-pck.txt` 로 설치 진행 시 에러 발생하여 라인별로 read 후 설치 진행
+        - conda 환경 없이 설치 진행한다면, python 3.7을 별도로 설치하고 환경 변수 설정 후 진행해야하여 그냥 conda로 진행
+    - 제35회 ADP 실기 시험 환경 라이브러리, 해당 환경은 리눅스라고 함
+        - 완벽하게 구성하고 싶다면 WSL 이용해서 리눅스 환경에서 진행하는 것을 추천
 6. `jupyter notebook` 통해서 주피터 노트북 실행 가능
     - 시스템 검색에 jupyuter notebook 검색 시, 나오는 걸로 실행 가능하다고 함 (내 경우는 안 됨)

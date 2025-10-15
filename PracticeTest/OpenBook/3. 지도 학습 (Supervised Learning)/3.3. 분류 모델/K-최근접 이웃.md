@@ -51,7 +51,7 @@ X_test_scaled = scaler.transform(X_test)
 # KNeighborsClassifier 주요 하이퍼파라미터
 # n_neighbors: 이웃의 수 (K). (기본값=5)
 # weights: 예측에 사용될 가중치. 'uniform'(동일 가중치), 'distance'(거리에 반비례하는 가중치).
-# metric: 거리 측정 방법. 'minkowski'(기본값, p=2이면 유클리드 거리), 'manhattan' 등.
+# metric: 거리 측정 방법. 'minkowski'(기본값, p=2이면 유클리드 거리), 'euclidean', 'manhattan', 'chebyshev' 등.
 # p: minkowski 거리의 파라미터. (기본값=2)
 knn_clf = KNeighborsClassifier(n_neighbors=5)
 knn_clf.fit(X_train_scaled, y_train)
