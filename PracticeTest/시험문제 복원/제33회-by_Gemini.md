@@ -21,15 +21,15 @@
     from sklearn.impute import KNNImputer
     import pandas as pd
 
-    # # 데이터 로드 및 범주형 변수 처리 가정
-    # # df = pd.read_csv('hcv_data.csv')
-    # # df['Sex'] = df['Sex'].map({'m': 0, 'f': 1})
-    # # 결측치가 있는 컬럼들 선택 (예시)
-    # # cols_with_na = ['ALB', 'ALP', 'CHOL', ...]
+    # 데이터 로드 및 범주형 변수 처리 가정
+    df = pd.read_csv('hcv_data.csv')
+    df['Sex'] = df['Sex'].map({'m': 0, 'f': 1})
+    # 결측치가 있는 컬럼들 선택 (예시)
+    cols_with_na = ['ALB', 'ALP', 'CHOL', ...]
 
-    # # KNN Imputer 적용
-    # imputer = KNNImputer(n_neighbors=5)
-    # df_imputed = pd.DataFrame(imputer.fit_transform(df), columns=df.columns)
+    # KNN Imputer 적용
+    imputer = KNNImputer(n_neighbors=5)
+    df_imputed = pd.DataFrame(imputer.fit_transform(df), columns=df.columns)
     ```
 
 ### 1-2. 이상치 확인 및 처리
@@ -42,12 +42,12 @@
     ```python
     from sklearn.preprocessing import RobustScaler
 
-    # # RobustScaler 적용
-    # scaler = RobustScaler()
-    # features = df_imputed.drop('Category', axis=1)
-    # scaled_features = scaler.fit_transform(features)
-    # df_processed = pd.DataFrame(scaled_features, columns=features.columns)
-    # df_processed['Category'] = df_imputed['Category']
+    # RobustScaler 적용
+    scaler = RobustScaler()
+    features = df_imputed.drop('Category', axis=1)
+    scaled_features = scaler.fit_transform(features)
+    df_processed = pd.DataFrame(scaled_features, columns=features.columns)
+    df_processed['Category'] = df_imputed['Category']
     ```
 
 ### 1-3. EDA 및 그룹 간 차이 확인
@@ -58,18 +58,18 @@
     ```python
     from scipy.stats import f_oneway
 
-    # # 시각화 예시 (ALT 변수)
-    # sns.boxplot(x='Category', y='ALT', data=df_processed)
-    # plt.title('ALT levels by Category')
-    # plt.show()
+    # 시각화 예시 (ALT 변수)
+    sns.boxplot(x='Category', y='ALT', data=df_processed)
+    plt.title('ALT levels by Category')
+    plt.show()
 
-    # # 통계 검정 (모든 변수에 대해 반복)
-    # categories = df_processed['Category'].unique()
-    # grouped_data = [df_processed['ALT'][df_processed['Category'] == cat] for cat in categories]
-    # f_stat, p_val = f_oneway(*grouped_data)
+    # 통계 검정 (모든 변수에 대해 반복)
+    categories = df_processed['Category'].unique()
+    grouped_data = [df_processed['ALT'][df_processed['Category'] == cat] for cat in categories]
+    f_stat, p_val = f_oneway(*grouped_data)
 
-    # if p_val < 0.05:
-    #     print(f"ALT 변수는 Category 그룹 간에 통계적으로 유의미한 차이가 있습니다 (p-value: {p_val:.4f}).")
+    if p_val < 0.05:
+        print(f"ALT 변수는 Category 그룹 간에 통계적으로 유의미한 차이가 있습니다 (p-value: {p_val:.4f}).")
     ```
 
 ### 1-4. 주성분분석(PCA) 수행 가능성 검토
@@ -83,12 +83,12 @@
     # !pip install factor_analyzer
     from factor_analyzer.factor_analyzer import calculate_bartlett_sphericity, calculate_kmo
 
-    # # KMO 및 Bartlett 검정 수행
-    # kmo_all, kmo_model = calculate_kmo(features)
-    # chi_square_value, p_value = calculate_bartlett_sphericity(features)
+    # KMO 및 Bartlett 검정 수행
+    kmo_all, kmo_model = calculate_kmo(features)
+    chi_square_value, p_value = calculate_bartlett_sphericity(features)
 
-    # print(f"KMO Test: {kmo_model:.3f}")
-    # print(f"Bartlett Test p-value: {p_value:.4f}")
+    print(f"KMO Test: {kmo_model:.3f}")
+    print(f"Bartlett Test p-value: {p_value:.4f}")
     ```
     - **판단**: KMO 값이 0.6 이상이고 Bartlett 검정의 p-value가 0.05 미만이라면, "변수들 간에 유의미한 상관관계가 존재하여 PCA를 통해 정보를 압축하고 새로운 설명변수를 도출하는 것이 가능하다"고 결론 내릴 수 있습니다.
 
