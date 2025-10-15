@@ -94,9 +94,9 @@
 ### 3.3. 분류 모델
 - 로지스틱 회귀: `LogisticRegression`
 - K-최근접 이웃: `KNeighborsClassifier`
-- 서포트 벡터 머신: `SVC`
 - 트리 기반: `DecisionTreeClassifier`, `RandomForestClassifier`
     - 모델 시각화
+- 서포트 벡터 머신: `SVC`
 - 부스팅 계열: `GradientBoostingClassifier`, `XGBClassifier`, `LGBMClassifier`
 - 나이브 베이즈: `GaussianNB`
 
