@@ -117,14 +117,13 @@
 
 ## 5. 시계열 분석 (Time Series Analysis)
 
-- **시계열 특성**: 정상성(Stationarity), 자기상관(Autocorrelation)
+- **시계열 기본 개념**: 데이터 변환, 정상성(Stationarity), 자기상관(Autocorrelation)
 - **정상성 검정**: `ADF` (Augmented Dickey-Fuller) Test
 - **시계열 데이터 처리**
     - 이동, 이동 통계량, 차분, 집계, 평활법(이동평균, 지수평활법 (Holt-Winters))
-- **시계열 분해**: 추세, 계절성, 주기, 불규칙 요소
-- **시계열 파악**: ACF, PACF 플롯
+- **시계열 분해 및 파악**: 추세, 계절성, 주기, 불규칙 요소 / ACF, PACF 플롯
 - **시계열 모델**: `AR`, `MA`, `ARMA`, `ARIMA`, `SARIMA`, `MARIMA (미작성)`
-- **고급 모델**: `VAR`, `Prophet`, `LSTM`, 상태 공간 모델 (State Space Models)
+- **고급 시계열 모델**: `VAR`, `Prophet`, `LSTM`, 상태 공간 모델 (State Space Models)
 
 ## 6. 텍스트 마이닝 (Text Mining)
 
