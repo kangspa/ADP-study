@@ -23,7 +23,6 @@
 - **클래스 불균형 처리**: Undersampling, Oversampling (SMOTE), Class Weight
 
 ### 1.3. 데이터 시각화
-- **라이브러리**: Matplotlib, Seaborn
 - **주요 차트**: Line, Bar, Scatter, Histogram, Box Plot, Heatmap, Pair Plot
 - **차트 옵션**: 축 레이블, 제목, 범례, 서브플롯(subplot), 여러 그래프 겹치기
 
