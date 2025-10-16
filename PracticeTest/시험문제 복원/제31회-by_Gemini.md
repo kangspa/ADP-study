@@ -56,19 +56,19 @@
     from sklearn.svm import SVC
     from sklearn.metrics import classification_report
 
-    # # SVM 모델 및 파라미터 그리드 설정
-    # svm = SVC(random_state=42)
-    # param_grid = {'C': [0.1, 1, 10], 'gamma': ['scale', 'auto'], 'kernel': ['rbf']}
+    # SVM 모델 및 파라미터 그리드 설정
+    svm = SVC(random_state=42)
+    param_grid = {'C': [0.1, 1, 10], 'gamma': ['scale', 'auto'], 'kernel': ['rbf']}
 
-    # # 그리드 서치 수행
-    # grid_search = GridSearchCV(svm, param_grid, cv=3, scoring='f1_weighted')
-    # grid_search.fit(X_train, y_train)
+    # 그리드 서치 수행
+    grid_search = GridSearchCV(svm, param_grid, cv=3, scoring='f1_weighted')
+    grid_search.fit(X_train, y_train)
 
-    # # 최적 모델로 평가
-    # best_model = grid_search.best_estimator_
-    # preds = best_model.predict(X_test)
-    # print(f"Best Parameters: {grid_search.best_params_}")
-    # print(classification_report(y_test, preds))
+    # 최적 모델로 평가
+    best_model = grid_search.best_estimator_
+    preds = best_model.predict(X_test)
+    print(f"Best Parameters: {grid_search.best_params_}")
+    print(classification_report(y_test, preds))
     ```
 - **성능 평가**: `classification_report`를 통해 최적화된 모델의 클래스별 `precision`과 `recall`을 확인하고, 전반적인 성능 향상 여부를 분석합니다.
 

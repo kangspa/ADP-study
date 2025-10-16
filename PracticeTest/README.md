@@ -53,6 +53,7 @@
     - Keras==2.2.4
     - tensorflow==1.13.1
     - PuLP==2.5.0
+    - gensim==3.7.2
 
 {filename}을 읽고, 각 문제별 어떤 분석 방법으로 접근해야하는지 가능한 모든 방법을 전부 알려주세요.
 각 문제별로 아래와 같은 내용을 서술해주면 됩니다.
@@ -98,6 +99,14 @@
     - statsmodels==0.13.2
     - scikit-learn==0.23.2
     - matplotlib==3.0.3
+    - seaborn==0.9.0
+    - pingouin==0.3.5
+    - torch==1.0.1.post2
+    - torchvision==0.2.2.post3
+    - Keras==2.2.4
+    - tensorflow==1.13.1
+    - PuLP==2.5.0
+    - gensim==3.7.2
 - 이모티콘은 사용하지 말고 경어체를 사용해주세요.
 - 관련 내용에 관해 예제 코드를 작성 시, 사용 가능한 라이브러리를 전부 감안하여 작성해주세요.
     - 머신러닝 모델링 등을 다룰 때, sklearn 기반 코드를 작성하돼, stats, sm, pingouin 등 다른 라이브러리로도 해당 모델 구축 가능할 경우 함께 작성해주세요.
