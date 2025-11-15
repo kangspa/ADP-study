@@ -56,36 +56,7 @@ Jupyter의 기본 자동완성(Jedi)이 너무 느리거나 불편할 경우, �
 
 ## 3. 한글 폰트 깨짐 해결 (Matplotlib)
 
-Matplotlib 시각화 시 한글이 깨져 보일 경우, 아래 코드를 실행하여 시스템에 맞는 한글 폰트를 설정합니다.
-
-```python
-import matplotlib.pyplot as plt
-import platform
-
-# 운영체제에 맞는 한글 폰트 설정
-if platform.system() == 'Windows':
-    plt.rc('font', family='Malgun Gothic')
-elif platform.system() == 'Darwin':  # Mac OS
-    plt.rc('font', family='AppleGothic')
-else:  # Linux
-    # 사전에 나눔고딕 설치 필요
-    # sudo apt-get install -y fonts-nanum*
-    # fc-cache -fv
-    plt.rc('font', family='NanumGothic')
-
-# 마이너스 부호 깨짐 방지
-plt.rcParams['axes.unicode_minus'] = False
-
-# --- 예시 ---
-plt.figure(figsize=(10, 5))
-plt.plot([0, 1, 2, 3], [0, 1, 4, 9])
-plt.title('한글 제목 테스트')
-plt.xlabel('X축 라벨')
-plt.ylabel('Y축 라벨')
-plt.show()
-```
-
-아니면 아래 코드를 통해 설치된 폰트 리스트를 출력 후 선택해도 된다.
+Matplotlib 시각화 시 한글이 깨져 보일 경우, 아래 코드를 통해 설치된 폰트 리스트를 출력 후 선택한다.
 
 ```python
 import matplotlib.font_manager as fm
@@ -97,7 +68,7 @@ font_list[:]
 #font_list = [font.name for font in fm.fontManager.ttflist]
 ```
 
-제35회 ADP 실기 시험 기준, 폰트 파일 위치를 직접 지정해서 설정 시 아래와 같이 진행하면 된다.
+실기 시험 가이드에 나온 폰트 파일 위치를 직접 지정해서 설정 시 아래와 같이 진행하면 된다.
 
 ```python
 import matplotlib.pyplot as plt
@@ -136,6 +107,18 @@ plt.rcParams['axes.titlesize'] = 10 # 축 제목 글꼴 크기
 plt.rcParams['xtick.labelsize'] = 6 # x축 tick 레이블의 글꼴 크기
 plt.rcParams['ytick.labelsize'] = 6 # y축 tick 레이블의 글꼴 크기
 plt.rcParams['legend.fontsize'] = 10 # 범례 글꼴 크기
+```
+
+만약 위와 같은 방법으로 폰트 깨짐 해결이 안될 경우, 기존 캐시가 남아있어서 그럴 수 있으니 삭제를 진행해준다.
+
+```python
+import matplotlib
+matplotlib.font_manager._rebuild()
+```
+
+Linux 명령어를 통한 수동 삭제:
+```bash
+rm ~/.cache/matplotlib -rf
 ```
 
 ## 4. PDF로 내보내기 (Export to PDF)
