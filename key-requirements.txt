@@ -8,6 +8,7 @@ seaborn==0.9.0
 pingouin==0.3.5
 torch
 torchvision==0.2.2.post3
+Pillow==5.4.1
 jupyter==1.0.0
 jupyterlab==0.35.4
 Keras==2.2.4

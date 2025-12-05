@@ -241,12 +241,15 @@ EDA 과정에서 결측값 처리, 이상값 수정, 변수 변환 및 파생 �
 
 ## uv로 구성하기
 
-1. `uv init`으로 가상환경 생성 및 초기화
+1. `uv init --python 3.7`으로 가상환경 생성 및 초기화
+    - `uv python list`로 파이썬 3.7 버전 확인 후 진행(없을 경우 설치 필요)
+    - 3.7 버전의 경로를 직접 설정해서 진행도 가능 (`uv init --python "C:\Python37\python.exe"`)
 2. Powershell에서 `Get-Content key-requirements.txt | ForEach-Object { uv add $_ }` 로 우선 필수 라이브러리 설치
     - 파일 안 내용을 하나씩 읽어서 설치하는 방식
 3. Powershell에서 `Get-Content 35_pck_list.txt | ForEach-Object { uv add $_ }` 로 나머지 환경도 시험환경과 통일
     - 사이에 에러 발생하며 설치가 안되는 것도 있는 것 같지만, 그건 conda에서 pip으로 설치할 때(위의 방법)도 동일해서, 그냥 이처럼 진행
 4. `torch`와 `xgboost`만 버전 입력 없이 설치 진행
     - 실제 시험 환경에서 많이 쓰진 않지만, 일단 코드 작성은 필요할테니 작성함
-5. jupyter 가 제대로 설치되지 않아 우선 `python -m venv "환경명"`으로 설치 후 pip으로 설치
-    - 현재 pc 문제인지 집 가서도 진행해볼 예정
+5. 현재 테스트 중인 pc에서 uv 방식 설치 시 의존성 문제 때문인지 jupyter가 안됨
+    - `python -m venv ".venv"`로 가상환경 설치 후 그 안에서 `pip install -r key-requirements.txt` 로 설치 진행 중
+    - 이 때 python 명령어는 3.7로 설정해둘 필요 있음.
