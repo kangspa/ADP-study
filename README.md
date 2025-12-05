@@ -238,3 +238,11 @@ EDA 과정에서 결측값 처리, 이상값 수정, 변수 변환 및 파생 �
         - 주피터 노트북 실행하는 것까지 생각하면 그냥 miniconda로 진행하는게 더 좋을 것으로 보임
 6. `jupyter notebook` 통해서 주피터 노트북 실행 가능
     - 시스템 검색에 jupyuter notebook 검색 시, 나오는 걸로 실행 가능하다고 함 (내 경우는 안 됨)
+
+## uv로 구성하기
+
+1. `uv init`으로 가상환경 생성 및 초기화
+2. Powershell에서 `Get-Content key-requirements.txt | ForEach-Object { uv add $_ }` 로 우선 필수 라이브러리 설치
+    - 파일 안 내용을 하나씩 읽어서 설치하는 방식
+3. Powershell에서 `Get-Content 35_pck_list.txt | ForEach-Object { uv add $_ }` 로 나머지 환경도 시험환경과 통일
+    - 사이에 에러 발생하며 설치가 안되는 것도 있는 것 같지만, 그건 conda에서 pip으로 설치할 때(위의 방법)도 동일해서, 그냥 이처럼 진행
