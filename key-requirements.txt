@@ -16,6 +16,7 @@ jupyterlab==0.35.4
 Keras==2.2.4
 tensorboard==1.13.1
 tensorflow==1.13.1
+protobuf==3.7.1
 PuLP==2.5.0
 lightgbm==2.2.3
 plotly==3.7.1
@@ -24,3 +25,5 @@ graphviz==0.10.1
 gensim==3.7.2
 imbalanced-learn==0.5.0
 mlxtend==0.17.0
+fbprophet==0.5
+holidays==0.9.11
