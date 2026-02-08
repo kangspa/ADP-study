@@ -27,3 +27,5 @@ imbalanced-learn==0.5.0
 mlxtend==0.17.0
 fbprophet==0.5
 holidays==0.9.11
+konlpy==0.5.1
+beautifulsoup4==4.7.1
