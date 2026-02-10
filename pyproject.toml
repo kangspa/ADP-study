@@ -35,7 +35,9 @@ dependencies = [
     "fbprophet==0.5",
     "holidays==0.9.11",
     "httpstan<4.0",
-    "pywin32<300"
+    "pywin32<300",
+    "konlpy==0.5.1",
+    "beautifulsoup4==4.7.1"
 ]
 [tool.uv.extra-build-dependencies]
-fbprophet = ["pystan==2.19.0.0"]
+fbprophet = ["pystan==2.19.1.1", "setuptools", "wheel", "Cython"]
