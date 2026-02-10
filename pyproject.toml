@@ -3,7 +3,7 @@ name = "adp-study"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
-requires-python = ">=3.7"
+requires-python = ">=3.7,<3.8"
 dependencies = [
     "numpy==1.21.6",
     "pandas==1.1.2",
@@ -16,7 +16,7 @@ dependencies = [
     "seaborn==0.9.0",
     "pingouin==0.3.5",
     "torch",
-    "torchvision==0.2.2.post3",
+    "torchvision>=0.13.0",
     "Pillow==5.4.1",
     "jupyter==1.0.0",
     "jupyterlab==0.35.4",
@@ -32,12 +32,9 @@ dependencies = [
     "gensim==3.7.2",
     "imbalanced-learn==0.5.0",
     "mlxtend==0.17.0",
-    "fbprophet==0.5",
     "holidays==0.9.11",
     "httpstan<4.0",
     "pywin32<300",
     "konlpy==0.5.1",
     "beautifulsoup4==4.7.1"
 ]
-[tool.uv.extra-build-dependencies]
-fbprophet = ["pystan==2.19.1.1", "setuptools", "wheel", "Cython"]
