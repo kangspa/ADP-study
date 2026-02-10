@@ -1,0 +1,41 @@
+[project]
+name = "adp-study"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.7"
+dependencies = [
+    "numpy==1.21.6",
+    "pandas==1.1.2",
+    "pandas-flavor==0.2.0",
+    "scipy==1.7.3",
+    "statsmodels==0.13.2",
+    "scikit-learn==0.23.2",
+    "scikit-posthocs==0.6.5",
+    "matplotlib==3.0.3",
+    "seaborn==0.9.0",
+    "pingouin==0.3.5",
+    "torch",
+    "torchvision==0.2.2.post3",
+    "Pillow==5.4.1",
+    "jupyter==1.0.0",
+    "jupyterlab==0.35.4",
+    "Keras==2.2.4",
+    "tensorboard==1.13.1",
+    "tensorflow==1.13.1",
+    "protobuf==3.7.1",
+    "PuLP==2.5.0",
+    "lightgbm==2.2.3",
+    "plotly==3.7.1",
+    "xgboost==0.90",
+    "graphviz==0.10.1",
+    "gensim==3.7.2",
+    "imbalanced-learn==0.5.0",
+    "mlxtend==0.17.0",
+    "fbprophet==0.5",
+    "holidays==0.9.11",
+    "httpstan<4.0",
+    "pywin32<300"
+]
+[tool.uv.extra-build-dependencies]
+fbprophet = ["pystan==2.19.0.0"]
