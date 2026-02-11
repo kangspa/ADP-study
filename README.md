@@ -244,12 +244,9 @@ EDA 과정에서 결측값 처리, 이상값 수정, 변수 변환 및 파생 �
 1. `uv init --python 3.7`으로 가상환경 생성 및 초기화
     - `uv python list`로 파이썬 3.7 버전 확인 후 진행(없을 경우 설치 필요)
     - 3.7 버전의 경로를 직접 설정해서 진행도 가능 (`uv init --python "C:\Python37\python.exe"`)
-2. Powershell에서 `Get-Content key-requirements.txt | ForEach-Object { uv add $_ }` 로 우선 필수 라이브러리 설치
-    - 파일 안 내용을 하나씩 읽어서 설치하는 방식
-3. Powershell에서 `Get-Content 35_pck_list.txt | ForEach-Object { uv add $_ }` 로 나머지 환경도 시험환경과 통일
-    - 사이에 에러 발생하며 설치가 안되는 것도 있는 것 같지만, 그건 conda에서 pip으로 설치할 때(위의 방법)도 동일해서, 그냥 이처럼 진행
-4. `torch`와 `xgboost`만 버전 입력 없이 설치 진행
-    - 실제 시험 환경에서 많이 쓰진 않지만, 일단 코드 작성은 필요할테니 작성함
-5. 현재 테스트 중인 pc에서 uv 방식 설치 시 의존성 문제 때문인지 jupyter가 안됨
-    - `python -m venv ".venv"`로 가상환경 설치 후 그 안에서 `pip install -r key-requirements.txt` 로 설치 진행 중
-    - 이 때 python 명령어는 3.7로 설정해둘 필요 있음.
+2. `uv sync`를 통해서 `pyproject.toml` 파일과 uv.lock 파일과 동기화 진행
+    - `xgboost` 설치 관련해서 `vcomp140.dll` 오류가 발생하면, 아래 url에서 `vcredist_*.exe` 파일 다운 및 설치 진행
+        - <https://learn.microsoft.com/ko-kr/cpp/windows/latest-supported-vc-redist?view=msvc-170#visual-studio-2015-vc-140-no-longer-supported>
+    - 현재 PracticeTest 환경에서 사용 중인 라이브러리 중 `fbprophet`만 설치 진행을 못 하는 중
+        - 추후 linux 환경에서 설치 테스트 해봐야 함. 현재 실습 코드에 `fbprophet` 사용한 결과는 colab 환경에서 설치 및 진행해봄(버전이 다름)
+3. `uv run python -m notebook`을 통해 jupyter notebook 실행 가능
