@@ -36,5 +36,7 @@ dependencies = [
     "httpstan<4.0",
     "pywin32<300",
     "konlpy==0.5.1",
-    "beautifulsoup4==4.7.1"
+    "beautifulsoup4==4.7.1",
+    "scikit-optimize==0.5.2",
+    "joblib==0.13.2"
 ]
